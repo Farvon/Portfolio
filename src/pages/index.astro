@@ -1,21 +1,22 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-import About from '../components/About.astro';
-import Proyectos from '../components/Proyectos.astro'
-import Estudios from '../components/Estudios.astro'
-import Contacto from '../components/Contacto.astro'
+import About from "../components/About.astro";
+import Proyectos from "../components/Proyectos.astro";
+import Estudios from "../components/Estudios.astro";
+import Contacto from "../components/Contacto.astro";
 ---
 
 <Layout>
-	<main class="w-full">
-		<About/>
-		
-		<Proyectos/>
-	
-		<Estudios/>
+  <main
+    class="w-full h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory"
+  >
+    <About />
 
-		<Contacto/>
-		
-	</main>
+    <Proyectos />
+
+    <Estudios />
+
+    <Contacto />
+  </main>
 </Layout>
