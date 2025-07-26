@@ -1,35 +1,36 @@
 ---
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
 
 import SideMenu from "../components/SideMenu.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Portfolio - Chiavón Facundo</title>
-	</head>
-	<body>
-		<SideMenu/>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Portfolio - Chiavón Facundo</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <SideMenu />
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		display: flex;
-		flex-direction: row;
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #fefae0;
-		transition: all ease-in-out 1s;
-		scroll-behavior: smooth;
-
-	}
+  html,
+  body {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fdfdfd;
+    transition: all ease-in-out 1s;
+    scroll-behavior: smooth;
+  }
 </style>
