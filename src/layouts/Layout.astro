@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import { ClientRouter } from "astro:transitions";
 
 import SideMenu from "../components/SideMenu.astro";
 ---
@@ -15,7 +14,7 @@ import SideMenu from "../components/SideMenu.astro";
     <title>Portfolio - Chiavón Facundo</title>
   </head>
   <body>
-    <SideMenu />
+    <SideMenu client:load />
     <slot />
   </body>
 </html>
@@ -28,11 +27,7 @@ import SideMenu from "../components/SideMenu.astro";
     margin: 0;
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
-    background-color: #fdfdfd;
-=======
-    background-color: #fefae0;
->>>>>>> 4b03c521271be48f79b2c3f7691f944126c2d314
+    background-color: white;
     transition: all ease-in-out 1s;
     scroll-behavior: smooth;
   }
