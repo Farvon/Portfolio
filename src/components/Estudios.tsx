@@ -1,4 +1,11 @@
-import { GraduationCap, Calendar, MapPin } from "lucide-react";
+import {
+  GraduationCap,
+  Calendar,
+  MapPin,
+  Paintbrush,
+  Code,
+  Brackets,
+} from "lucide-react";
 
 interface Study {
   id: string;
@@ -8,84 +15,86 @@ interface Study {
   startDate: string;
   endDate: string;
   description: string;
-  type: "university" | "course" | "certification";
+  icon: "programacion" | "developer" | "diseño" | "secundario";
+  type: "Universitario" | "Terciario" | "Secundario";
   status: "completed" | "in-progress";
 }
 
 const studies: Study[] = [
   {
     id: "1",
-    title: "Ingeniería en Sistemas Computacionales",
-    institution: "Universidad Tecnológica Nacional",
-    location: "Buenos Aires, Argentina",
-    startDate: "2020",
-    endDate: "2024",
-    description:
-      "Carrera universitaria enfocada en desarrollo de software, bases de datos, redes y gestión de proyectos tecnológicos.",
-    type: "university",
-    status: "completed",
+    title: "Programador",
+    institution: "Universidad Técnica Nacional - Regional San Nicolás",
+    location: "San Nicolás de los Arroyos",
+    startDate: "2025",
+    endDate: "en curso",
+    description: "Tecnicatura universitaria en programación.",
+    type: "Universitario",
+    status: "in-progress",
+    icon: "programacion",
   },
   {
     id: "2",
-    title: "Curso de React y Next.js",
-    institution: "Platzi",
-    location: "Online",
-    startDate: "2023",
-    endDate: "2023",
-    description:
-      "Curso especializado en desarrollo frontend moderno con React, Next.js, TypeScript y mejores prácticas.",
-    type: "course",
+    title: "Analista de sistemas.",
+    institution: "Instituto Superior de Formación Técnica N° 38",
+    location: "San nicolás de los Arroyos",
+    startDate: "2021",
+    endDate: "2024",
+    description: "Técnico superior en análisis de sistemas. (Prom: 9.17/10)",
+    type: "Terciario",
     status: "completed",
+    icon: "developer",
   },
   {
     id: "3",
-    title: "Certificación AWS Cloud Practitioner",
-    institution: "Amazon Web Services",
-    location: "Online",
-    startDate: "2024",
-    endDate: "En progreso",
-    description:
-      "Certificación fundamental de AWS que cubre conceptos básicos de cloud computing y servicios de Amazon.",
-    type: "certification",
-    status: "in-progress",
+    title: "Diseñador digital",
+    institution: "Instituto Belgrano",
+    location: "Rosario",
+    startDate: "2011",
+    endDate: "2014",
+    description: "Analista en diseño digital.",
+    type: "Terciario",
+    status: "completed",
+    icon: "diseño",
   },
   {
     id: "4",
-    title: "Diplomado en Inteligencia Artificial",
-    institution: "Instituto Tecnológico de Monterrey",
-    location: "Online",
-    startDate: "2024",
-    endDate: "2025",
+    title: "Técnico informático",
+    institution: "Escuela Nacional de Educación Técnica N° 5",
+    location: "La Emilia",
+    startDate: "2003",
+    endDate: "2006",
     description:
-      "Programa especializado en machine learning, deep learning y aplicaciones prácticas de IA.",
-    type: "course",
-    status: "in-progress",
+      "Técnico en informática personal y profecional - Bachiller orientado a producción de bienes y servicios. (Prom. 9.59/10)",
+    type: "Secundario",
+    status: "completed",
+    icon: "secundario",
   },
 ];
 
 const getTypeColor = (type: Study["type"]) => {
   switch (type) {
-    case "university":
+    case "Universitario":
       return "bg-blue-500";
-    case "course":
+    case "Terciario":
       return "bg-green-500";
-    case "certification":
+    case "Secundario":
       return "bg-purple-500";
     default:
       return "bg-gray-500";
   }
 };
 
-const getTypeLabel = (type: Study["type"]) => {
-  switch (type) {
-    case "university":
-      return "Universidad";
-    case "course":
-      return "Curso";
-    case "certification":
-      return "Certificación";
-    default:
-      return "Estudio";
+const getTypeIcon = (icon: Study["icon"]) => {
+  switch (icon) {
+    case "programacion":
+      return <Code className="w-6 h-6 text-white" />;
+    case "developer":
+      return <Brackets className="w-6 h-6 text-white" />;
+    case "diseño":
+      return <Paintbrush className="w-6 h-6 text-white" />;
+    case "secundario":
+      return <GraduationCap className="w-8 h-8 text-white" />;
   }
 };
 
@@ -94,10 +103,10 @@ export default function Estudios() {
     <div id="estudios" className="max-w-6xl mx-auto p-6">
       <div className="mb-12 text-center">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">
-          Mi Formación Académica
+          Formación Académica
         </h2>
         <p className="text-gray-600">
-          Un recorrido cronológico por mis estudios y certificaciones
+          Un recorrido cronológico por mis estudios y certificaciones.
         </p>
       </div>
 
@@ -131,7 +140,8 @@ export default function Estudios() {
                             study.type
                           )} flex items-center justify-center`}
                         >
-                          <GraduationCap className="w-6 h-6 text-white" />
+                          {getTypeIcon(study.icon)}
+                          {/* <GraduationCap className="w-6 h-6 text-white" /> */}
                         </div>
                       </div>
 
@@ -150,7 +160,8 @@ export default function Estudios() {
                             study.type
                           )} flex items-center justify-center`}
                         >
-                          <GraduationCap className="w-6 h-6 text-white" />
+                          {getTypeIcon(study.icon)}
+                          {/* <GraduationCap className="w-6 h-6 text-white" /> */}
                         </div>
                       </div>
 
@@ -171,7 +182,8 @@ export default function Estudios() {
                       study.type
                     )} shadow-lg`}
                   >
-                    <GraduationCap className="w-8 h-8 text-white" />
+                    {getTypeIcon(study.icon)}
+                    {/* <GraduationCap className="w-8 h-8 text-white" /> */}
                   </div>
                   <div className="ml-6 flex-1">
                     <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-300">
@@ -211,8 +223,12 @@ function StudyCard({ study }: { study: Study }) {
         <p className="text-base text-gray-700 font-medium mb-2">
           {study.institution}
         </p>
-        <span className="inline-flex items-center px-2 py-1 rounded text-xs bg-gray-100 text-gray-600">
-          {getTypeLabel(study.type)}
+        <span
+          className={`inline-flex items-center px-2 py-1 rounded text-xs ${getTypeColor(
+            study.type
+          )} text-white`}
+        >
+          {study.type}
         </span>
       </div>
 
