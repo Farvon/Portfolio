@@ -100,7 +100,7 @@ const getTypeIcon = (icon: Study["icon"]) => {
 
 export default function Estudios() {
   return (
-    <div id="estudios" className="max-w-6xl mx-auto p-6">
+    <div id="estudios" className="max-w-6xl mx-auto p-6 ">
       <div className="mb-12 text-center">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">
           Formación Académica

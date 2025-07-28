@@ -1,14 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import About from "../components/About.astro";
+import About from "../components/About.tsx";
 import Proyectos from "../components/Proyectos.astro";
 import Estudios from "../components/Estudios.js";
 import Contacto from "../components/Contacto.astro";
-import Trabajo from "@/components/Trabajo";
+import Trabajo from "@/components/Trabajo.tsx";
 ---
 
-<Layout client:load>
+<Layout>
   <main
     class="w-full h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory"
   >
@@ -16,7 +16,7 @@ import Trabajo from "@/components/Trabajo";
 
     <Estudios />
 
-    <Trabajo client:load />
+    <Trabajo />
 
     <Proyectos />
     <Contacto />
