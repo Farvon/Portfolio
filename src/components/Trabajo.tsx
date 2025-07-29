@@ -142,25 +142,6 @@ const getTipoIcon = (icon: ExperienciaLaboral["icon"]) => {
   }
 };
 
-const formatearFecha = (fecha: string) => {
-  const [year, month] = fecha.split("-");
-  const meses = [
-    "Ene",
-    "Feb",
-    "Mar",
-    "Abr",
-    "May",
-    "Jun",
-    "Jul",
-    "Ago",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dic",
-  ];
-  return `${meses[Number.parseInt(month) - 1]} ${year}`;
-};
-
 const calcularDuracion = (inicio: string, fin: string | null) => {
   const fechaInicio = new Date(inicio);
   const fechaFin = fin ? new Date(fin) : new Date();
@@ -234,9 +215,9 @@ export default function Trabajo() {
                       <div className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" />
                         <span>
-                          {formatearFecha(experiencia.fechaInicio)} -{" "}
+                          {experiencia.fechaInicio} -
                           {experiencia.fechaFin
-                            ? formatearFecha(experiencia.fechaFin)
+                            ? experiencia.fechaFin
                             : "Presente"}
                         </span>
                       </div>
@@ -286,7 +267,7 @@ export default function Trabajo() {
                                   (tech, techIndex) => (
                                     <span
                                       key={techIndex}
-                                      className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300"
+                                      className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-300"
                                     >
                                       {tech}
                                     </span>

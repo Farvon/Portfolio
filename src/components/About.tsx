@@ -11,7 +11,7 @@ export default function About() {
             <div className="flex justify-center">
               <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48">
                 <img
-                  src="../public/imagen-perfil.webp"
+                  src="./imagen-perfil.webp"
                   alt="Foto de Facu"
                   className="rounded-full object-cover border-4 border-primary/10 shadow-lg w-[200px] h-[200px]"
                 />
@@ -51,6 +51,24 @@ export default function About() {
                     Saludos.
                   </p>
                 </div>
+              </div>
+              <div className="flex items-center gap-12 p-4 justify-center">
+                <span className="flex items-center justify-center w-14 h-14 bg-white dark:bg-gray-900 border-4 border-blue-200 rounded-full  shadow-gray-400 shadow-md">
+                  <img
+                    src="./email-icon.svg"
+                    alt="Email"
+                    className="w-14 h-14 object-cover"
+                  />
+                </span>
+                <span className="flex items-center justify-center w-14 h-14 bg-white dark:bg-gray-900 border-4 border-blue-200 rounded-full shadow-gray-400 shadow-md">
+                  <img src="./linkedin-icon.svg" alt="Linkedin" className="" />
+                </span>
+                <span className="flex items-center justify-center w-14 h-14 bg-white dark:bg-gray-900 border-4 border-blue-200 rounded-full  shadow-gray-400 shadow-md ">
+                  <img src="./github-icon.svg" alt="Github" className="" />
+                </span>
+                <span className="flex items-center justify-center w-14 h-14 bg-white dark:bg-gray-900 border-4 border-blue-200 rounded-full  shadow-gray-400 shadow-md">
+                  <img src="./wsp-icon.svg" alt="Whatsapp" className="" />
+                </span>
               </div>
             </div>
           </div>
