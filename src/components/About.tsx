@@ -41,9 +41,14 @@ export default function About() {
                   </p>
 
                   <p className="mb-4">
-                    Si puedo ayudarte,{" "}
+                    Si puedo ayudarte,
                     <span className="font-semibold text-primary">
-                      ¡no dudes en contactarme!
+                      ¡no dudes en{" "}
+                      <a href="#contacto">
+                        <span className="font-semibold text-primary  hover:[text-shadow:_3px_5px_3px_#d7eef9]">
+                          contactarme!
+                        </span>
+                      </a>
                     </span>
                   </p>
 
@@ -51,24 +56,6 @@ export default function About() {
                     Saludos.
                   </p>
                 </div>
-              </div>
-              <div className="flex items-center gap-12 p-4 justify-center">
-                <span className="flex items-center justify-center w-14 h-14 bg-white dark:bg-gray-900 border-4 border-blue-200 rounded-full  shadow-gray-400 shadow-md">
-                  <img
-                    src="./email-icon.svg"
-                    alt="Email"
-                    className="w-14 h-14 object-cover"
-                  />
-                </span>
-                <span className="flex items-center justify-center w-14 h-14 bg-white dark:bg-gray-900 border-4 border-blue-200 rounded-full shadow-gray-400 shadow-md">
-                  <img src="./linkedin-icon.svg" alt="Linkedin" className="" />
-                </span>
-                <span className="flex items-center justify-center w-14 h-14 bg-white dark:bg-gray-900 border-4 border-blue-200 rounded-full  shadow-gray-400 shadow-md ">
-                  <img src="./github-icon.svg" alt="Github" className="" />
-                </span>
-                <span className="flex items-center justify-center w-14 h-14 bg-white dark:bg-gray-900 border-4 border-blue-200 rounded-full  shadow-gray-400 shadow-md">
-                  <img src="./wsp-icon.svg" alt="Whatsapp" className="" />
-                </span>
               </div>
             </div>
           </div>
