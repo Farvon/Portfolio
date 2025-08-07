@@ -27,10 +27,10 @@ export default function About() {
 
                 <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
                   <p className="mb-4">
-                    Actualmente soy{" "}
+                    Actualmente soy
                     <span className="font-semibold text-foreground">
                       Analista de Sistemas
-                    </span>{" "}
+                    </span>
                     con conocimientos en desarrollo web y diseño digital.
                   </p>
 
